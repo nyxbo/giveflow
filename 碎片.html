@@ -1,0 +1,365 @@
+<style>
+    .bg_hide {
+        display: none !important;
+    }
+    .bg {
+        position: absolute;
+        z-index: 9999;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .bg .content {
+        position: relative;
+        width: 84%;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        background: url("http://p2.ifengimg.com/d27607d14a52d158/2017/52/bg.png") no-repeat center center;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+    }
+    .bg .content .close {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        right: 3%;
+        top: 8px;
+    }
+    .bg .content .close img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .bg .content .logo {
+        width: 40%;
+        margin: 3% auto;
+        align-items: center;
+    }
+    .bg .content .logo img {
+        width: 100%;
+        height: 100%;
+    }
+    .bg .content .tip {
+        width: 100%;
+        margin-top: 4%;
+    }
+    .bg .content .tip img {
+        width: 100%;
+        height: 100%;
+    }
+    .bg .content .tip .tipimg1 {
+        display: none;
+    }
+    .bg .content .register {
+        width: 87%;
+        height: 85px;
+        background: #fff;
+        margin: 5% auto;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .bg .content .register .input_content {
+        width: 100%;
+        height: 100%;
+        background: url("http://p2.ifengimg.com/d27607d14a52d158/2017/52/input.png") no-repeat center center;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+    }
+    .bg .content .register .input_tips {
+        width: 100%;
+        height: 100%;
+        /*background: url("http://p2.ifengimg.com/d27607d14a52d158/2017/52/download.png") no-repeat center center;*/
+        /*-webkit-background-size: 100% 100%;*/
+        /*background-size: 100% 100%;*/
+        display: none;
+    }
+    .bg .content .register .input {
+        width: 90%;
+        height: 50%;
+        margin: 0 auto;
+        border: none;
+    }
+    .bg .content .register .input input {
+        border: none;
+        font-size: 15px;
+        outline: none;
+    }
+    .bg .content .register .input.num {
+        display: flex;
+        align-items: center;
+    }
+    .bg .content .register .input.num input {
+        width: 100%;
+    }
+    .bg .content .register .input.code {
+        position: relative;
+        width: 90%;
+        border-top: 1px solid #3b94ff;
+        display: flex;
+        align-items: center;
+    }
+    .bg .content .register .input.code input {
+        width: 65%;
+        float: left;
+    }
+    .bg .content .register .input.code span {
+        display: inline-block;
+        width: 35%;
+        height: 25px;
+        font-size: 10px;
+        text-align: center;
+        line-height: 25px;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background: url("http://p2.ifengimg.com/d27607d14a52d158/2017/52/phonebutton.png") no-repeat center center;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    .bg .content .btn {
+        width: 87%;
+        /*height: 8%;*/
+        margin: 0 auto;
+    }
+    .bg .content .btn img {
+        width: 100%;
+        height: 100%;
+    }
+    .bg .content .btn .receive-again {
+        display: none;
+    }
+    .bg .content .instruction {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .bg .content .instruction .title {
+        width: 37%;
+        /*height: 3%;*/
+        background: url("http://p2.ifengimg.com/d27607d14a52d158/2017/52/line.png") no-repeat center center;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+        margin: 5% auto;
+        font-size: 15px;
+        line-height: 15px;
+        text-align: center;
+        color: #fff;
+    }
+    .bg .content .instruction .instruction_content {
+        width: 87%;
+        height: 112px;
+        margin: 0 auto 5%;
+        text-align: justify;
+        font-size: 11px;
+        color: #fff;
+        overflow: scroll;
+        /*display: -webkit-box;*/
+        /*-webkit-line-clamp: 7;*/
+        /*-webkit-box-orient: vertical;*/
+    }
+    .overflow-hide{
+        overflow: hidden;
+    }
+</style>
+<div class="bg bg_hide">
+    <div class="content">
+        <div class="close">
+            <img src="http://p2.ifengimg.com/d27607d14a52d158/2017/52/close.png" alt="">
+        </div>
+        <div class="logo">
+            <img src="http://p2.ifengimg.com/d27607d14a52d158/2017/52/logo.png" alt="" class="">
+        </div>
+        <div class="tip">
+            <img src="http://p2.ifengimg.com/d27607d14a52d158/2017/52/lq.png" alt="" class="tipimg">
+            <img src="http://p2.ifengimg.com/d27607d14a52d158/2017/52/lq1.png" alt="" class="tipimg1">
+        </div>
+        <div class="register">
+            <div class="input_content">
+                <div class="input num">
+                    <input id="mobile" type="number" placeholder="请输入您的手机号"/>
+                </div>
+                <div class="input code">
+                    <input id="codeNum" type="text" placeholder="请输入短信验证码"/>
+                    <span id="reSendCode">发送验证码</span>
+                    <span id="waitResend" style="display:none" class="no">再过<strong id="time">60</strong>s发送</span>
+                </div>
+            </div>
+            <div class="input_tips">
+                <img src="http://p2.ifengimg.com/d27607d14a52d158/2017/52/download.png" alt="" style="width: 100%;margin-bottom: 5%;">
+            </div>
+        </div>
+        <div class="btn">
+            <img src="http://p2.ifengimg.com/d27607d14a52d158/2017/52/button.png" alt="" class="receive">
+            <img src="http://p2.ifengimg.com/d27607d14a52d158/2017/52/againbutton.png" alt="" class="receive-again">
+        </div>
+        <div class="instruction">
+            <div class="title">活动说明</div>
+            <div class="instruction_content">
+                1、输入手机号，验证活动资格，验证通过立得10M流量。<br>
+                2、下载“凤凰新闻”客户端，用领取活动资格的手机号注册并登陆，立得100M流量，当月有效。<br>
+                3、参加活动用户如因手机欠费等原因造成流量无法下发，视为用户自动放弃。<br>
+                4、本活动目前仅限广东移动用户内测。<br>
+                5、本活动仅限新用户参加（同一设备、同一手机号视为相同用户），每个手机号只能获奖一次。<br>
+                6、本活动最终解释权归凤凰新闻客户端所有。
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //设置弹窗cookie时效
+    function setCookie(name, value, days) { //设置cookie
+        var d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + "; " + expires;
+    }
+
+    $(function(){
+        var tan = document.cookie.indexOf("tanTime");
+        var u = navigator.userAgent;
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        //验证参数
+        var reg=window.location.href.match(/data/);
+        if(reg !=null && isiOS){
+            $(".bg").removeClass("bg_hide");
+            $("body").addClass("overflow-hide");
+            document.body.addEventListener('touchmove', function (event) {
+                event.preventDefault();
+            }, false);
+            var tanzhen = "http://stadig.ifeng.com/actsta.js?datatype=wap_act&value=gdsll1225&uri="+encodeURIComponent(window.location.href)+"&ref="+encodeURIComponent(window.location.href)+"&uid="+encodeURIComponent(getUserid())+"&sid="+encodeURIComponent(getSid())+"&time="+encodeURIComponent(new Date().valueOf())+"&ci="+encodeURIComponent(gloableSettings.channelPath)+"&pt="+encodeURIComponent(gloableSettings.pt);
+            getScript( tanzhen );
+        }
+
+        $(".close").click(function(){
+            $('.bg').hide();
+            $("body").removeClass("overflow-hide");
+            document.body.addEventListener('touchmove', function (event) {
+                event.returnValue = true;
+            }, false);
+            setCookie("tanTime","value",1);
+        });
+        if( tan != -1){
+            $(".bg").hide();
+        }
+        $(".bg input").focus(function(){
+            document.body.scrollTop =  0;
+        });
+        // 获取验证码
+        $("#reSendCode").click(function(){
+            var mobile = $("#mobile").val();
+            // 设置一个session
+            localStorage.setItem("mobile",mobile);
+            if($.trim(mobile) == ""){
+                alert("请填写手机号");
+                $("#mobile").val("").focus();
+            }else if(!(/^1[34578]\d{9}$/.test(mobile))){
+                alert("手机号格式有误，请重新输入");
+                $("#mobile").val("").focus();
+            }else{
+                $.ajax({
+                    type: "post",
+                    dataType: "jsonp",
+                    url:"http://10.21.6.36:8082/Active_Cellnetwork/getCaptcha",
+                    // url:"https://user.iclient.ifeng.com/Active_Cellnetwork/getCaptcha",
+                    data: {
+                        phone:mobile
+                    },
+                    success : function (res) {
+                        if(res.code == 200){
+                            getFlow();
+                            $("#reSendCode").hide();
+                            $("#waitResend").show().find("#time").text(60);
+                            //倒计时
+                            var Time;
+                            Time = setInterval(function(){
+                                $("#time").text(parseInt($("#time").text()) - 1);
+                                if(parseInt($("#time").text()) == 0){
+                                    clearInterval(Time);
+                                    $("#reSendCode").show();
+                                    $("#waitResend").hide().find("#time").text(60);
+                                }
+                            },1000);
+                        }else{
+                            // getFlow();
+                            alert(res.msg);
+                            alert("该活动仅限特定用户参与，请确认手机号码是否正确");
+                        }
+                    },
+                    error : function (error) {
+                        console.log('msg',error);
+                        alert("该活动仅限特定用户参与，请确认手机号码是否正确");
+                    }
+                });
+
+            }
+
+
+            //领取流量
+            function getFlow(){
+                $(".receive").click(function(){
+                    var codeNum = $("#codeNum").val();
+                    var phone = localStorage.getItem("mobile");
+                    if(codeNum == ""){
+                        alert("请输入验证码");
+                        $("#codeNum").val("").focus();
+                    }
+                    // else if(codeNum == iscode){
+                    //     // $.ajax({
+                    //     //     type: "post",
+                    //     //     dataType: "jsonp",
+                    //     //     url:"http://10.21.6.36:8082/Active_Cellnetwork/checkCaptcha",
+                    //     //     // url:"https://user.iclient.ifeng.com/Active_Cellnetwork/checkCaptcha",
+                    //     //     data :{
+                    //     //         phone : phone,
+                    //     //         // captcha : codeNum
+                    //     //     },
+                    //     //     success:function(res){
+                    //     //         console.log(res);
+                    //     //         if(res.code == 200){
+                    //     //             alert("10M流量领取成功，点击下载凤凰新闻客户端，该手机号码注册新用户并登录立即获取100M流量，该流量将在1-3个工作日内发放至注册手机号，点击“继续领取”");
+                    //     //             $(".receive").hide().siblings(".receive-again").show();
+                    //     //             $(".input_content").hide().siblings(".input_tips").show();
+                    //     //         }else{
+                    //     //             alert(res.msg);
+                    //     //         }
+                    //     //     }
+                    //     // });
+                    // }
+                    else {
+                        // alert("请输入正确的验证码");
+                        $.ajax({
+                            type: "post",
+                            dataType: "jsonp",
+                            url:"http://10.21.6.36:8082/Active_Cellnetwork/checkCaptcha",
+                            // url:"https://user.iclient.ifeng.com/Active_Cellnetwork/checkCaptcha",
+                            data :{
+                                phone : phone,
+                                captcha : codeNum
+                            },
+                            success:function(res){
+                                console.log(res);
+                                if(res.code == 200){
+                                    alert("10M流量领取成功，点击下载凤凰新闻客户端，该手机号码注册新用户并登录立即获取100M流量，该流量将在1-3个工作日内发放至注册手机号，点击“继续领取”");
+                                    $(".receive").hide().siblings(".receive-again").show();
+                                    $(".input_content").hide().siblings(".input_tips").show();
+                                }else{
+                                    alert(res.msg);
+                                }
+                            }
+                        });
+                    }
+                })
+            }
+        });
+
+        //拉起客户端
+        $(".receive-again").click(function(){
+
+        });
+    });
+</script>

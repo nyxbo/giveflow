@@ -1,0 +1,55 @@
+ <script type="text/javascript">
+        var gloableSettings = {
+            "domain": "inews.ifeng.com",
+            "channelPath": "/",
+            "pt":"",
+           }
+        var globalSettings = gloableSettings;
+</script>
+function getScript(src, callback) {
+        var head = document.getElementsByTagName("head")[0];
+        var js = document.createElement("script");
+        js.setAttribute("src", src);
+        js.onload = js.onreadystatechange = function() {
+            if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+                head.removeChild(js);
+                if (callback) callback();
+            }
+        }
+        head.appendChild(js);
+}
+
+
+ function mfp_getCookie(c_name) {
+      var start = document.cookie.indexOf( c_name + "=");
+      if ( start == -1 ) { return ""; }
+      start = start + c_name.length+1;
+      var end = document.cookie.indexOf(";",start);
+      if (end == -1) { end = document.cookie.length; }
+      return decodeURIComponent( document.cookie.substring(start,end) );
+    };
+
+ //获取uid
+    function getUid(){
+      var userid=mfp_getCookie("userid");
+      var sid=mfp_getCookie("sid");
+      if(sid == ""){
+        sid = userid;
+      }    
+      return sid;
+    }
+    function getUserid(){
+      return mfp_getCookie("userid");
+    }
+
+    function getSid(){
+      return mfp_getCookie("sid");
+    }
+
+
+ var tanzhen = "http://stadig.ifeng.com/actsta.js?datatype=wap_act&value=article_next&uri="+encodeURIComponent(window.location.href)+"&ref="+encodeURIComponent(window.location.href)+"&uid="+encodeURIComponent(getUserid())+"&sid="+encodeURIComponent(getSid())+"&time="+encodeURIComponent(new Date().valueOf())+"&ci="+encodeURIComponent(gloableSettings.channelPath)+"&pt="+encodeURIComponent(gloableSettings.pt);
+ getScript( tanzhen );
+
+ <!-- 统计探针 -->
+<script src="http://p1.ifengimg.com/a/2016/0809/sta_collection_common_iifeng_v4.js"></script>
+<script src="http://p3.ifengimg.com/a/2017/0329/sta_collection_iifeng_pv_v8.js"></script>         <!-- 统计探针end -->
